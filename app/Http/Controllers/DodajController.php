@@ -26,6 +26,7 @@ class DodajController extends Controller
      } 
    public function edycja(Oferta $oferta) 
      {
+       
         return view('dodaj.podglad',compact('oferta'));
      }  
     public function zapisz(Request $request) {

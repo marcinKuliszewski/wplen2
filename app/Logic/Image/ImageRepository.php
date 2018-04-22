@@ -53,6 +53,7 @@ class ImageRepository
         $sessionImage = new Image;
         $sessionImage->filename      = $allowed_filename;
         $sessionImage->original_name = $originalName;
+        $sessionImage->oferta_id = 'dduppa';
         $sessionImage->save();
 
         return Response::json([

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/addfoto', ['as' => 'upload', 'uses' => 'ImageController@getUpload']);
+Route::get('/addfoto/{oferta}', ['as' => 'upload', 'uses' => 'ImageController@getUpload']);
 Route::post('upload', ['as' => 'upload-post', 'uses' =>'ImageController@postUpload']);
 Route::post('upload/delete', ['as' => 'upload-remove', 'uses' =>'ImageController@deleteUpload']);
 
