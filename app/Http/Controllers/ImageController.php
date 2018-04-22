@@ -48,13 +48,13 @@ class ImageController extends Controller
         return $response;
     }
 
-    /**
+      /**
      * Part 2 - Display already uploaded images in Dropzone
      */
 
-    public function getServerImagesPage()
+    public function getServerImagesPage(Oferta $oferta)
     {
-        return view('pages.upload-2');
+        return view('pages.upload-2',compact('oferta'));
     }
 
     public function getServerImages()
@@ -67,7 +67,7 @@ class ImageController extends Controller
             $imageAnswer[] = [
                 'original' => $image->original_name,
                 'server' => $image->filename,
-                'size' => File::size(public_path('images/full_sizee/' . $image->filename))
+                'size' => File::size(public_path('images/full_size/' . $image->filename))
             ];
         }
 

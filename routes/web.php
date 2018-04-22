@@ -51,6 +51,11 @@ Route::get('/galeria/{oferta}',[
     'as'=>'galeria'
 ]);
 
+/** * Part 2 - Display already uploaded images in Dropzone */
+Route::get('example-2', ['as' => 'upload-2', 'uses' => 'ImageController@getServerImagesPage']);
+Route::get('server-images', ['as' => 'server-images', 'uses' => 'ImageController@getServerImages']);
+
+
 
 Route::get('/import', 'HomeController@import_baz');
 

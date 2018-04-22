@@ -26,7 +26,7 @@ class DodajController extends Controller
      } 
    public function edycja(Oferta $oferta) 
      {
-       
+       // Session::put('nr_oferty', 'value');
         return view('dodaj.podglad',compact('oferta'));
      }  
     public function zapisz(Request $request) {

@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('head')
+    {!! HTML::style('//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css') !!}
+@stop
+
+@section('footer')
+    {!! HTML::script('http://code.jquery.com/jquery-1.12.4.js') !!}
+    {!! HTML::script('http://code.jquery.com/ui/1.12.1/jquery-ui.js') !!}
+    <script>$("#sortable").sortable();</script>
+@stop
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -8,17 +18,20 @@
                 <div class="panel-heading">{{$oferta->nazwa}} Galeria Zdjęć</div>
 
                 <div class="panel-body">
-                
+                <ul id="sortable">
+                     @foreach($row as $img)
+                        <li>
+                           <img src="{{ asset('/images/icon_sizee/'.$img->filename)}}">
+                        </li>
+                      @endforeach
+                </ul>
                 </div>
                 
                 <div class="panel-heading">{{$oferta->nazwa}}</div>
                 <div class="panel-body">
-                     @foreach($oferta as $ofertt)
-                     
-                     @endforeach
-                     <br>
-                     <a class="btn btn-default" href="/dodaj">Dodaj</a>
-                     
+                    
+                    
+  
                 </div>
             </div>
         </div>
