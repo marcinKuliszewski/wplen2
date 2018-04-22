@@ -46,6 +46,10 @@ Route::get('/edycja/{oferta}',[
     'as'=>'dodaj.edycja'
 ]);
 
+Route::get('/galeria/{oferta}',[
+    'uses'=>'GaleriaController@pokaz',
+    'as'=>'galeria'
+]);
 
 
 Route::get('/import', 'HomeController@import_baz');

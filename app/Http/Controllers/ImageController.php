@@ -6,6 +6,7 @@ use App\Logic\Image\ImageRepository;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use App\Models\Image;
+use App\Oferta;
 
 class ImageController extends Controller
 {
@@ -14,11 +15,13 @@ class ImageController extends Controller
     public function __construct(ImageRepository $imageRepository)
     {
         $this->image = $imageRepository;
+        $oferta= new Oferta;
+        
     }
 
-    public function getUpload()
+    public function getUpload(Oferta $oferta)
     {
-        return view('pages.upload');
+        return view('pages.upload',compact('oferta'));
     }
 
 

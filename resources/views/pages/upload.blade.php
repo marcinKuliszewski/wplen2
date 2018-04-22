@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-offset-1 col-md-10">
             <a class="btn btn-default" href="/home">Panel Urzytkownika</a>
-            <a class="btn btn-default" href="{{route('upload',$oferta)}}"> Galeria</a>
+            <a class="btn btn-default" href="{{route('galeria',$oferta)}}">Galeria</a>
             <div class="jumbotron how-to-create" >
 
                 <h3>Images - 1<span id="photoCounter"></span></h3>
