@@ -21,7 +21,7 @@
                 <br />
 
                 {!! Form::open(['url' => route('upload-post'), 'class' => 'dropzone', 'files'=>true, 'id'=>'real-dropzone']) !!}
-
+                <input type="hidden" name="oferta_id" value="{{$oferta->id}}">
                 <div class="dz-message">
 
                 </div>

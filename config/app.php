@@ -162,6 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 			
         /*
          * Package Service Providers...
@@ -177,7 +178,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 	 Intervention\Image\ImageServiceProvider::class,
-  Collective\Html\HtmlServiceProvider::class,
+         Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 		
 
     ],
@@ -229,8 +231,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 		'Form'      => Collective\Html\FormFacade::class,
-        'HTML'      => Collective\Html\HtmlFacade::class,
-			'Image'     => Intervention\Image\Facades\Image::class
+                'HTML'      => Collective\Html\HtmlFacade::class,
+		'Image'     => Intervention\Image\Facades\Image::class,
+                 'Debugbar' => Barryvdh\Debugbar\Facade::class
     ],
 
 ];

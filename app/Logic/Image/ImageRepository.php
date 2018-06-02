@@ -8,13 +8,12 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
 use App\Models\Image;
-
-
+use Illuminate\Http\Request;
 class ImageRepository
 {
-    public function upload( $form_data )
+    public function upload($form_data )
     {
-
+      
         $validator = Validator::make($form_data, Image::$rules, Image::$messages);
 
         if ($validator->fails()) {
@@ -49,11 +48,11 @@ class ImageRepository
             ], 500);
 
         }
-
+        $oferta_id=12;
         $sessionImage = new Image;
         $sessionImage->filename      = $allowed_filename;
         $sessionImage->original_name = $originalName;
-        $sessionImage->oferta_id = 'dduppa';
+        $sessionImage->oferta_id = $form_data['oferta_id'];
         $sessionImage->save();
 
         return Response::json([

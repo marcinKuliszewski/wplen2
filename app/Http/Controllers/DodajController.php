@@ -24,9 +24,9 @@ class DodajController extends Controller
            $oferta->save();
         
      } 
-   public function edycja(Oferta $oferta) 
+   public function edycja(Oferta $oferta, Request $request) 
      {
-       // Session::put('nr_oferty', 'value');
+        //$request->session()->put('oferta_id', '12');
         return view('dodaj.podglad',compact('oferta'));
      }  
     public function zapisz(Request $request) {
@@ -79,15 +79,16 @@ class DodajController extends Controller
        {
          print $i++; 
        }
-        if($i=='')
+        if($i=='' && $request->input('nazwa'))
         {
             $oferta->save();
+            return view('dodaj.podglad',compact('oferta'));
         }
+        else
+            {
+            // return view('dodaj.podglad',compact('oferta'));
+            }
         
-        
-        
-        
-       return view('dodaj.podglad',compact('oferta'));
     }
 }
 ?>

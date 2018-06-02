@@ -52,10 +52,7 @@ class ImageController extends Controller
      * Part 2 - Display already uploaded images in Dropzone
      */
 
-    public function getServerImagesPage(Oferta $oferta)
-    {
-        return view('pages.upload-2',compact('oferta'));
-    }
+  
 
     public function getServerImages()
     {
